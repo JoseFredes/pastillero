@@ -49,9 +49,9 @@ export default class ProductCard extends Vue {
     const LeftoverAmount = pillsQuantity - formatedRest
 
     if( LeftoverAmount > 0){
-        return `Quedan ${LeftoverAmount} pastillas para ${LeftoverAmount} días`
+        return `Quedan ${LeftoverAmount} comprimidos para ${LeftoverAmount} días`
     }else {
-        return ` Se te acabron las pastillas hace ${Math.abs(LeftoverAmount)} días`
+        return ` Se acabaron los comprimidos hace ${Math.abs(LeftoverAmount)} días`
     }
   }
 }
