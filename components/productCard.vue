@@ -20,7 +20,7 @@
           </v-col>
           <v-col cols="2" class="mt-12 pr-6">
             <v-row
-              ><v-btn icon><v-icon>mdi-cart-plus</v-icon></v-btn></v-row
+              ><v-btn large icon><v-icon large>mdi-cart-plus</v-icon></v-btn></v-row
             >
           </v-col>
         </v-row>
