@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import {  Purchases , itemsPurchased, userProduct} from '../utils/types'
+import { Purchases, itemsPurchased, userProduct, Product } from '../utils/types';
 import { userPurchases } from '../utils/apiClient/fetchUserPurchases'
 import { obtainProductById } from '../utils/obtainProductById'
 import ProductCard from '~/components/productCard.vue'
@@ -39,7 +39,8 @@ export default class Index extends Vue {
   purchases: Purchases[] = []
   itemsPurchased: itemsPurchased[] = []
   productPurchased: itemsPurchased[] = []
-  mounted() {
+ 
+ mounted() {
     this.fetchPurchases()
   }
 
@@ -69,9 +70,11 @@ export default class Index extends Vue {
       else if (a.date === b.date) return 0
       return -1
     })
+
       const lastDate = this.itemsPurchased[0].date
       this.getProducts(lastDate)
   }
+
 
   getProducts(lastDate: Date){
        const lastIdsPurchased: Number[] = []
@@ -87,7 +90,7 @@ export default class Index extends Vue {
       })
 
      this.productPurchased.forEach(async product => {
-        const itemProduct  = await obtainProductById(product.productId)
+        const itemProduct: Product  = await obtainProductById(product.productId)
         const productPurchased : userProduct = {
           product: itemProduct,
           date : product.date
@@ -97,6 +100,8 @@ export default class Index extends Vue {
 
     return this.products
   }
+
+
 
 }
 </script>
