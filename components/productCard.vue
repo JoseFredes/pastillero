@@ -3,15 +3,15 @@
     <div v-for="product in products" :key="product.id">
       <v-card elevation="1" class="mt-4 mb-3">
         <v-row>
-          <v-col cols="4" xs="2">
+          <v-col cols="2" xs="2">
             <v-img class="ma-2"
               :src="product.product.imagesUrl"
-              max-height="110"
-              min-width="110"
+              max-height="100"
+              min-width="100"
               contain
             ></v-img>
           </v-col>
-          <v-col cols="6" xs="4">
+          <v-col cols="8" xs="4">
             <v-card-title>{{ product.product.name }}</v-card-title>
             <v-card-subtitle>{{
               product.product.concentration

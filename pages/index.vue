@@ -49,7 +49,11 @@ export default class Index extends Vue {
   }
 
   obtainUserProducts() {
-    let items = {}
+    let items : itemsPurchased = {
+      date: new Date(),
+      productId: 0,
+      quantity: 0
+    }
     this.purchases.forEach((purchase) => {
       purchase.details.forEach((detail) => {
         items = {
@@ -57,7 +61,7 @@ export default class Index extends Vue {
           productId: detail.product_id,
           quantity: detail.quantity,
         }
-        this.itemsPurchased.push(items as itemsPurchased)
+        this.itemsPurchased.push(items)
       })
     })
     this.itemsPurchased.sort((a, b) => {
